@@ -9,3 +9,8 @@ Es recomendable que las funciones que se usen en los actions de pinia sean funci
 
 # truncate en tailwindcss
 Para usar truncate en tailwindcss se debe agregar la clase truncate al elemento que se quiere truncar y agregar la clase w-40 para que el elemento ocupe 40% del ancho del contenedor
+
+# Headless UI
+Es una libreria de componentes accesibles para React y Vue, se puede instalar con npm o yarn
+- instalación
+npm install @headlessui/vue
