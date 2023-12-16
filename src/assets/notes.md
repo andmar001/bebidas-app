@@ -14,3 +14,6 @@ Para usar truncate en tailwindcss se debe agregar la clase truncate al elemento 
 Es una libreria de componentes accesibles para React y Vue, se puede instalar con npm o yarn
 - instalación
 npm install @headlessui/vue
+
+# Instalacion de iconos
+npm install @heroicons/vue
