@@ -2,14 +2,37 @@
    import { computed } from 'vue';
    import { RouterLink, useRoute } from 'vue-router';
    import { useBebidasStore } from '../stores/bebidas';
+   import { useNotificacionStore } from '../stores/notificacion';
 
    const route = useRoute();
    const store = useBebidasStore();
-
+   const notificaciones = useNotificacionStore();
    const paginaInicio = computed(() => route.name === 'inicio');
 
    const handleSubmit = () => {
       // TODO: Validar el formulario
+      if(Object.values(store.busqueda).includes('')){
+         notificaciones.texto = 'Todos los campos son obligatorios';
+         notificaciones.mostrar = true;
+         notificaciones.error = true;
+
+         // Otra forma de hacerlo
+         // $state 
+         // notificaciones.$state = {
+         //    texto: 'Todos los campos son obligatorios',
+         //    mostrar: true,
+         //    error: true
+         // };
+         // // $patch
+         // notificaciones.$patch({
+         //    texto: 'Todos los campos son obligatorios',
+         //    mostrar: true,
+         //    error: true
+         // });
+
+         return;
+      }
+
       store.obtenerRecetas();
    }
 
