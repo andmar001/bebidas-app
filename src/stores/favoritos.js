@@ -39,6 +39,11 @@ export const useFavoritosStore = defineStore("favoritos", () => {
 
       notificaciones.mostrar = true;
       notificaciones.texto = 'Receta agregada a favoritos';
+
+      // quitar la notificacion despues de 3 segundos
+      setTimeout(() => {
+         notificaciones.$reset()
+      }, 3000);
    }
 
    function handleClickFavoritos(e){
